@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "624165282439",
+    "firebase_url": "https://deef-39f5e.firebaseio.com",
+    "project_id": "deef-39f5e",
+    "storage_bucket": "deef-39f5e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624165282439:android:73071be77d2c8bf079ce22",
+        "android_client_info": {
+          "package_name": "com.rightside.deef"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624165282439-ppt3vk9l6lkkhh118am3fqddanvukrkn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rightside.deef",
+            "certificate_hash": "02d847cebea9f402d48779f29eae9f00f5486091"
+          }
+        },
+        {
+          "client_id": "624165282439-4ehbbntni1df55af0p94efull4pk7cpj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA44mawILpTqXDP9K4FhIZLW0REA0NHAdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624165282439-4ehbbntni1df55af0p94efull4pk7cpj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
