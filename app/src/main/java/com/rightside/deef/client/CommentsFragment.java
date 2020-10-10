@@ -3,48 +3,29 @@ package com.rightside.deef.client;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.rightside.deef.R;
+import com.rightside.deef.client.adapter.CommentAdapter;
+import com.rightside.deef.client.model.Comment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CommentsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class CommentsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private List<Comment> comments = new ArrayList<>();
+    private CommentAdapter adapter;
+    private RecyclerView recyclerView;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public CommentsFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CommentsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CommentsFragment newInstance(String param1, String param2) {
+    public static CommentsFragment newInstance() {
         CommentsFragment fragment = new CommentsFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
@@ -52,15 +33,28 @@ public class CommentsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_comments, container, false);
+        View view = inflater.inflate(R.layout.fragment_comments, container, false);
+
+        recyclerView = view.findViewById(R.id.recyclerView_comments);
+
+        Comment c1 = new Comment("Ivan Viana", "Muito bom bom mesmo genial muit bom top nota 10", "https://scontent.fitp1-1.fna.fbcdn.net/v/t1.0-9/62599874_1347423122074936_8018115376493625344_n.jpg?_nc_cat=101&_nc_sid=09cbfe&_nc_ohc=wK_jGY8FwKgAX-AHCHO&_nc_ht=scontent.fitp1-1.fna&oh=7f20f88c886e355cd32c17499f912a10&oe=5FA5D514");
+        comments.add(c1);
+        comments.add(c1);
+        comments.add(c1);
+        comments.add(c1);
+        comments.add(c1);
+        comments.add(c1);
+
+        adapter = new CommentAdapter(comments, getContext());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(adapter);
+
+        return view;
     }
 }
