@@ -5,8 +5,8 @@ interface BaseInterface {
     //implement
     }
     interface Fragment {
-        fun showLoading()
-        fun hideLoading()
+        fun showLoading(){}
+        fun hideLoading(){}
     }
 
 
