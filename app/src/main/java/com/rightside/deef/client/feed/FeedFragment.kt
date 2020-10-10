@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rightside.deef.R
+import com.rightside.deef.client.DetailsActivity
 import com.rightside.deef.client.feed.adapter.FeedAdapter
 import com.rightside.deef.client.model.Status
 import com.rightside.deef.client.productRequest.PostProductActivity
@@ -38,7 +39,18 @@ class FeedFragment : Fragment(), FeedContract.View{
         super.onViewCreated(view, savedInstanceState)
         presenter.view = this
         presenter.start()
-        feedAdapter = FeedAdapter(requireContext())
+        feedAdapter = FeedAdapter(requireContext()) {
+            val intent = Intent(context, DetailsActivity::class.java)
+            intent.putExtra("post", it)
+            startActivity(intent)
+            activity?.overridePendingTransition(R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim);
+        }
+        binding.recyclerViewFeed.addItemDecoration(
+            DividerItemDecoration(
+                requireContext(),
+                LinearLayoutManager.VERTICAL
+            )
+        )
         binding.recyclerViewFeed.layoutManager = LinearLayoutManager(
             requireContext(),
             LinearLayoutManager.VERTICAL,

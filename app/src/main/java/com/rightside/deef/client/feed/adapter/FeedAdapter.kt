@@ -1,6 +1,7 @@
 package com.rightside.deef.client.feed.adapter
 
 import android.content.Context
+import android.util.Log
 import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
@@ -12,9 +13,9 @@ import com.bumptech.glide.Glide
 import com.rightside.deef.R
 import com.rightside.deef.client.model.Status
 import com.rightside.deef.models.Post
-import org.w3c.dom.Text
 
-class FeedAdapter(var context : Context) : RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
+
+class FeedAdapter(var context : Context, var click : (Post) -> Unit) : RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
     var posts : List<Post> = ArrayList()
     inner class FeedViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
@@ -32,6 +33,7 @@ class FeedAdapter(var context : Context) : RecyclerView.Adapter<FeedAdapter.Feed
     }
     override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
         val post = posts[position]
+        Log.d("teste", post.isPrivate.toString())
         val textViewPostDescription : TextView = holder.itemView.findViewById(R.id.text_view_post_description)
         val textViewPostTime : TextView = holder.itemView.findViewById(R.id.text_view_time)
         val imageViewPhotoFeed : ImageView = holder.itemView.findViewById(R.id.image_view_photo_feed)
@@ -43,6 +45,7 @@ class FeedAdapter(var context : Context) : RecyclerView.Adapter<FeedAdapter.Feed
         textViewPostDescription.text = post.content
         textViewPostTime.text = post.date
         Glide.with(context).load(post.photoProductUrl).into(imageViewPhotoFeed)
+        holder.itemView.setOnClickListener { click(post) }
         textViewProductName.text = post.productName
         textViewUserName.text = post.user.name
         Glide.with(context).load(post.user.photoUrl).circleCrop().into(imageViewUser)
