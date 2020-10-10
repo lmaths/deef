@@ -68,7 +68,7 @@ class PostProductActivity : AppCompatActivity(),FeedContract.View {
                     uuid,
                     User(
                         "Matheus",
-                        "https://images-na.ssl-images-amazon.com/images/I/51VEQD%2BgTVL._AC_SX425_.jpg"
+                        "https://paraibaonline.com.br/wp-content/uploads/2020/01/palestrante-2.png"
                     )
                 )
             )

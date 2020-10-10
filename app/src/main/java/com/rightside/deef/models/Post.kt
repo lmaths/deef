@@ -14,7 +14,8 @@ data class Post(val content : String = "", val isPrivate : Boolean = false, val 
         Pair("status", status),
         Pair("photoProductUrl", photoProductUrl),
         Pair("id", id),
-        Pair("user", user.map)
+        Pair("user", user.map),
+        Pair("productName", productName)
     )
 
 }

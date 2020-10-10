@@ -251,10 +251,10 @@
         android:layout_marginBottom="8dp"
         android:backgroundTint="@android:color/white"
         android:clickable="true"
-        app:tint="@color/colorPrimary"
         android:src="@drawable/ic_edit"
         app:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/colorPrimary" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
