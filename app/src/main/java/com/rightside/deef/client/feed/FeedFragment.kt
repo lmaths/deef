@@ -39,12 +39,6 @@ class FeedFragment : Fragment(), FeedContract.View{
         presenter.view = this
         presenter.start()
         feedAdapter = FeedAdapter(requireContext())
-        binding.recyclerViewFeed.addItemDecoration(
-            DividerItemDecoration(
-                requireContext(),
-                LinearLayoutManager.VERTICAL
-            )
-        )
         binding.recyclerViewFeed.layoutManager = LinearLayoutManager(
             requireContext(),
             LinearLayoutManager.VERTICAL,
