@@ -1,15 +1,13 @@
-package com.rightside.deef.home
+package com.rightside.deef.client.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.rightside.deef.R
 import com.rightside.deef.databinding.ActivityHomeBinding
 
-class HomeActivity : AppCompatActivity() {
+class UserHomeActivity : AppCompatActivity() {
     lateinit var binding : ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
