@@ -1,5 +1,6 @@
 package com.rightside.deef.client.feed
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
