@@ -43,7 +43,7 @@ public class CommentsFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recyclerView_comments);
 
-        Comment c1 = new Comment("Ivan Viana", "Muito bom bom mesmo genial muit bom top nota 10", "https://scontent.fitp1-1.fna.fbcdn.net/v/t1.0-9/62599874_1347423122074936_8018115376493625344_n.jpg?_nc_cat=101&_nc_sid=09cbfe&_nc_ohc=wK_jGY8FwKgAX-AHCHO&_nc_ht=scontent.fitp1-1.fna&oh=7f20f88c886e355cd32c17499f912a10&oe=5FA5D514");
+        Comment c1 = new Comment("Ivan Viana", "Muito bom bom mesmo genial muito bom top nota 10 bom mesmo genial muito bom top nota 10 bom mesmo genial muito bom top nota 10", "https://scontent.fitp1-1.fna.fbcdn.net/v/t1.0-9/62599874_1347423122074936_8018115376493625344_n.jpg?_nc_cat=101&_nc_sid=09cbfe&_nc_ohc=wK_jGY8FwKgAX-AHCHO&_nc_ht=scontent.fitp1-1.fna&oh=7f20f88c886e355cd32c17499f912a10&oe=5FA5D514");
         comments.add(c1);
         comments.add(c1);
         comments.add(c1);

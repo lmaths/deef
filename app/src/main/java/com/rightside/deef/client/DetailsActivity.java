@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -14,6 +16,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     private ImageView imageViewProduct;
     private TabLayout tabLayout;
+    private ImageButton buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,14 @@ public class DetailsActivity extends AppCompatActivity {
 
         imageViewProduct = findViewById(R.id.imageView_product_image);
         tabLayout = findViewById(R.id.tabLayout);
+        buttonBack = findViewById(R.id.imageButton_back);
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         Glide.with(getApplicationContext())
                 .load("https://a-static.mlcdn.com.br/618x463/smart-tv-crystal-uhd-4k-led-50-samsung-50tu8000-wi-fi-bluetooth-hdr-3-hdmi-2-usb/magazineluiza/225605700/42cdf08f2cf47621e3c745ce17e3e69b.jpg")
