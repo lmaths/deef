@@ -38,10 +38,10 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferViewHol
     public void onBindViewHolder(@NonNull OfferViewHolder holder, int position) {
         Offer offer = offers.get(position);
 
-        Glide.with(context).load(offer.getUrlPhoto()).circleCrop().into(holder.imageViewStorePicture);
+        Glide.with(context).load(offer.getUrlPhoto()).centerCrop().into(holder.imageViewStorePicture);
         holder.textViewStoreName.setText(offer.getStoreName());
-        holder.textViewSellerName.setText(offer.getSellerName());
-        holder.textViewPrice.setText(String.valueOf(offer.getPrice()));
+        holder.textViewPayment.setText(offer.getSellerName());
+        holder.textViewPrice.setText("R$ " + offer.getPrice());
 
     }
 
@@ -54,7 +54,7 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferViewHol
 
         private ImageView imageViewStorePicture;
         private TextView textViewStoreName;
-        private TextView textViewSellerName;
+        private TextView textViewPayment;
         private TextView textViewPrice;
 
         public OfferViewHolder(@NonNull View itemView) {
@@ -62,8 +62,8 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferViewHol
 
             imageViewStorePicture = itemView.findViewById(R.id.imageView_store_picture);
             textViewStoreName = itemView.findViewById(R.id.textView_store_name);
-            textViewSellerName = itemView.findViewById(R.id.textView_seller_name);
-            textViewPrice = itemView.findViewById(R.id.textView_price);
+            textViewPayment = itemView.findViewById(R.id.textView_price);
+            textViewPrice = itemView.findViewById(R.id.textView_payment);
         }
     }
 }

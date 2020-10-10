@@ -3,13 +3,13 @@ package com.rightside.deef.client.model;
 public class Offer {
 
     private String storeName;
-    private String sellerName;
+    private String payment;
     private double price;
     private String urlPhoto;
 
-    public Offer(String storeName, String sellerName, double price, String urlPhoto) {
+    public Offer(String storeName, String payment, double price, String urlPhoto) {
         this.storeName = storeName;
-        this.sellerName = sellerName;
+        this.payment = payment;
         this.price = price;
         this.urlPhoto = urlPhoto;
     }
@@ -23,11 +23,11 @@ public class Offer {
     }
 
     public String getSellerName() {
-        return sellerName;
+        return payment;
     }
 
-    public void setSellerName(String sellerName) {
-        this.sellerName = sellerName;
+    public void setSellerName(String payment) {
+        this.payment = payment;
     }
 
     public double getPrice() {

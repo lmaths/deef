@@ -48,7 +48,7 @@ public class OfferFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recyclerView_offers);
 
-        Offer o1 = new Offer("Lojão do Eletrônico", "Fabrício", 2299.00, "https://lh3.googleusercontent.com/proxy/GH30i4zdu5hOXBMyBF5yvfjxWnrS4xuzA1osFB2_ceNKQduq9WTioWDvJ1aufBpcHwjvqOfNSaK9Fi0vgILYjNAY8y32");
+        Offer o1 = new Offer("Lojão do Eletrônico", "em até 12x de R$83,25", 2299.00, "https://lh3.googleusercontent.com/proxy/GH30i4zdu5hOXBMyBF5yvfjxWnrS4xuzA1osFB2_ceNKQduq9WTioWDvJ1aufBpcHwjvqOfNSaK9Fi0vgILYjNAY8y32");
         offers.add(o1);
         offers.add(o1);
         offers.add(o1);
