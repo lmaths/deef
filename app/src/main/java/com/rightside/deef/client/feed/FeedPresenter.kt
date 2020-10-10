@@ -2,6 +2,7 @@ package com.rightside.deef.client.feed
 
 import com.rightside.deef.base.BaseSchedulerProvider
 import com.rightside.deef.client.model.Category
+import com.rightside.deef.client.model.Offer
 import com.rightside.deef.client.model.Product
 import com.rightside.deef.models.Post
 import io.reactivex.disposables.CompositeDisposable
@@ -25,9 +26,18 @@ class FeedPresenter(var schedulerProvider: BaseSchedulerProvider, val service : 
         product.add(Product("TV SAMSUNG", "LG", Category.TELEVISAO, "R$2600","Em até 12x de 150R$", "4" , "https://images-americanas.b2w.io/produtos/01/00/img/1322119/1/1322119119_1SZ.jpg"))
         product.add(Product("Fogão Consul 4 bocas","Consul", Category.FOGAO, "R$900", "Em até 5x de 250R$", "5", "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=796479410"))
         product.add(Product("Fogão SmartBrass 6 bocas","SMARTBRAS", Category.FOGAO, "R$1700", "R$1300", "6", "https://novomundo.vtexassets.com/arquivos/ids/1568024-500-500"))
-        product.add(Product("Fogão SmartBrass 3 bocas","SMARTBRAS", Category.FOGAO, "R$1818", "R$1300", "6", "https://static.carrefour.com.br/medias/sys_master/images/images/h31/hfa/h00/h00/11119755362334.jpg"))
-        product.add(Product("Fogão Itatiaia 5 bocas","SMARTBRAS", Category.FOGAO, "R$4848", "R$1300", "6", "https://www.casasbahia-imagens.com.br/html/conteudo-produto/13/11488712/images/Fogao-CFS5NAB-Consul-5-Bocas_.png"))
+        product.add(Product("Fogão SmartBrass 3 bocas","SMARTBRAS", Category.FOGAO, "R$1818", "R$1300", "7", "https://static.carrefour.com.br/medias/sys_master/images/images/h31/hfa/h00/h00/11119755362334.jpg"))
+        product.add(Product("Fogão Itatiaia 5 bocas","SMARTBRAS", Category.FOGAO, "R$4848", "R$1300", "8", "https://www.casasbahia-imagens.com.br/html/conteudo-produto/13/11488712/images/Fogao-CFS5NAB-Consul-5-Bocas_.png"))
         service.saveProductList(product)
+    }
+
+    override fun createOffers() {
+        val offers : MutableList<Offer> = ArrayList()
+        offers.add(Offer("Só Fogões", "em até 10x de R$100",1500.00, "https://www.cozinhaefogao.com.br/media/wysiwyg/casadofogao.jpg"))
+        offers.add(Offer("Só Fogões", "em até 10x de R$100",1500.00, "https://www.cozinhaefogao.com.br/media/wysiwyg/casadofogao.jpg"))
+        offers.add(Offer("Só Fogões", "em até 10x de R$100",1500.00, "https://www.cozinhaefogao.com.br/media/wysiwyg/casadofogao.jpg"))
+        offers.add(Offer("Só Fogões", "em até 10x de R$100",1500.00, "https://www.cozinhaefogao.com.br/media/wysiwyg/casadofogao.jpg"))
+
     }
 
     private fun onSuccessPost() {

@@ -21,6 +21,7 @@ interface FeedContract {
     interface Presenter : BasePresenter<View> {
         fun sendPost(post : Post)
         fun createProductList()
+        fun createOffers()
         fun getFeed()
         fun getProducts(productName: String)
     }
